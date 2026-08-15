@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMKM Desa Delik</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary-500 selection:text-white">
+
+
+<script src="https://kit.fontawesome.com/87a2391b46.js" crossorigin="anonymous"></script>
+
+    <!-- HEADER / NAVIGATION BAR / BAR PALING ATAS -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Desa -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold text-xl  group-hover:scale-105 transition-transform">
+                        <img src="Logo Humas.png">
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-slate-900 tracking-tight block leading-none">Desa Delik</span>
+                        <span class="text-xs text-slate-500 font-medium">Kabupaten Semarang</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-1 bg-slate-100/60 p-1.5 rounded-full border border-slate-200/50">
+                    <a href="index.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Beranda</a>
+                    <a href="Header-Profil.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Profil</a>
+                    <a href="#pemerintahan" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Pemerintahan</a>
+                    <a href="Header-Potensi.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Potensi</a>
+                    <a href="Header-UMKM.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">UMKM</a>
+                    <a href="Header-Berita.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Berita</a>
+                </nav>
+
+                <!-- CTA Button Desktop -->
+                <div class="hidden md:flex items-center">
+                    <a href="#kontak" class="bg-slate-900 hover:bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-primary-600/20">
+                        Kontak Kami
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-colors" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-2">
+            <a href="index.html" class="mobile-link flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600">
+                <i class="fa-solid fa-house"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="Header-Profil.html" class="mobile-link flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Profil</span>
+            </a>
+            <a href="index.html" class="mobile-link flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600">
+                <i class="fa-solid fa-users"></i>
+                <span>Pemerintahan</span>
+            </a>
+                <a href="Header-Potensi.html" class="mobile-link flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Potensi</span>
+            </a>
+            <a href="Header-UMKM.html" class="mobile-link flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600">
+                <i class="fa-solid fa-shop"></i>
+                <span>UMKM</span>
+            </a>
+            <a href="Header-Berita.html" class="mobile-link flex items-center space-x-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>Berita</span>
+            <a href="#kontak" class="mobile-link block text-center mt-4 bg-primary-600 text-white font-semibold py-3 rounded-xl shadow-md">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Kontak Kami</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO HEADER UMKM -->
+    <section class="relative bg-gradient-to-b from-primary-900 via-primary-800 to-slate-900 text-white py-16 lg:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-primary-200 text-xs font-bold mb-4 backdrop-blur-sm">
+                <i class="fa-solid fa-bag-shopping text-emerald-400"></i> Katalog Produk Lokal Desa Delik
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">UMKM & Ekonomi Kreatif</h1>
+            <p class="text-slate-300 mt-3 max-w-2xl mx-auto text-sm sm:text-base">
+                Dukung pemberdayaan ekonomi warga lokal dengan langsung berbelanja produk berkualitas buatan tangan dan hasil pertanian khas Desa Delik.
+            </p>
+
+            <!-- Search & Filter Form -->
+            <div class="mt-8 max-w-2xl mx-auto bg-white p-2.5 rounded-2xl sm:rounded-full shadow-2xl flex flex-col sm:flex-row gap-2 border border-white/20">
+                <div class="flex items-center gap-3 px-4 py-2 flex-grow">
+                    <i class="fa-solid fa-magnifying-glass text-slate-400 text-sm"></i>
+                    <input type="text" id="search-input" placeholder="Cari nama produk atau nama usaha UMKM..." class="w-full text-slate-800 text-sm focus:outline-none placeholder:text-slate-400 font-medium">
+                </div>
+                <button onclick="performSearch()" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl sm:rounded-full text-xs font-bold transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-filter text-xs"></i> Cari Produk
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN DIRECTORY CONTENT SECTION -->
+    <section class="py-16 bg-slate-50 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5 mb-12">
+                <button onclick="filterCategory('all')" class="category-btn active px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-primary-600 text-white shadow-md shadow-primary-600/20">
+                    <i class="fa-solid fa-border-all mr-1.5"></i> Semua Produk
+                </button>
+                <button onclick="filterCategory('makanan')" class="category-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    <i class="fa-solid fa-utensils mr-1.5 text-amber-500"></i> Kuliner & Olahan
+                </button>
+                <button onclick="filterCategory('kerajinan')" class="category-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    <i class="fa-solid fa-hand-holding-heart mr-1.5 text-teal-500"></i> Kerajinan Tangan
+                </button>
+                <button onclick="filterCategory('pertanian')" class="category-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                    <i class="fa-solid fa-wheat-awn mr-1.5 text-emerald-500"></i> Hasil Tani & Kebun
+                </button>
+            </div>
+
+            <!-- UMKM Grid Cards Directory -->
+            <div id="umkm-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1 -->
+                <div class="umkm-card makanan bg-white rounded-3xl border border-slate-200/70 p-5 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+                    <div>
+                        <div class="h-52 rounded-2xl overflow-hidden mb-4 relative bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Kopi Robusta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Kopi+Robusta'">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Kuliner</span>
+                        </div>
+                        <span class="text-[11px] font-semibold text-primary-600 uppercase tracking-wider">Pemilik: Kelompok Tani Mandiri</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">Kopi Robusta Lereng Delik</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Biji kopi bubuk murni kualitas petik merah dari lereng pegunungan Desa Delik dengan aroma mantap dan gurih alami.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">Harga / Kemasan</span>
+                            <span class="font-bold text-slate-900 text-base">Rp 35.000 <span class="text-xs text-slate-500 font-normal">/250g</span></span>
+                        </div>
+                        <a href="https://wa.me/6285929094840?text=Halo,%20saya%20tertarik%20membeli%20Kopi%20Robusta%20Lereng%20Delik" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-full flex items-center gap-2 transition-all shadow-md shadow-emerald-600/20">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> pesan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="umkm-card kerajinan bg-white rounded-3xl border border-slate-200/70 p-5 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+                    <div>
+                        <div class="h-52 rounded-2xl overflow-hidden mb-4 relative bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=600&q=80" alt="Tas Anyaman Bambu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Kerajinan+Bambu'">
+                            <span class="absolute top-3 right-3 bg-teal-600 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Kerajinan</span>
+                        </div>
+                        <span class="text-[11px] font-semibold text-primary-600 uppercase tracking-wider">Pemilik: Ibu Karyawati</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">Tas & Anjat Anyaman Bambu</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Kerajinan tangan bambu ramah lingkungan, dianyam presisi dengan serat bambu pilihan yang kokoh dan artistik.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">Harga Mulai</span>
+                            <span class="font-bold text-slate-900 text-base">Rp 85.000</span>
+                        </div>
+                        <a href="https://wa.me/6285929094840?text=Halo,%20saya%20tertarik%20membeli%20Tas%20Anyaman%20Bambu" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-full flex items-center gap-2 transition-all shadow-md shadow-emerald-600/20">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> pesan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="umkm-card pertanian bg-white rounded-3xl border border-slate-200/70 p-5 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+                    <div>
+                        <div class="h-52 rounded-2xl overflow-hidden mb-4 relative bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="Beras Organik" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Beras+Organik'">
+                            <span class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Hasil Tani</span>
+                        </div>
+                        <span class="text-[11px] font-semibold text-primary-600 uppercase tracking-wider">Pemilik: Poktan Sri Murni</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">Beras Pandan Wangi Organik</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Beras lokal organik kaya nutrisi tanpa pengawet buatan, ditanam menggunakan pupuk kompos ramah lingkungan.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">Harga / Kemasan</span>
+                            <span class="font-bold text-slate-900 text-base">Rp 70.000 <span class="text-xs text-slate-500 font-normal">/5kg</span></span>
+                        </div>
+                        <a href="https://wa.me/6285929094840?text=Halo,%20saya%20tertarik%20membeli%20Beras%20Pandan%20Wangi%20Organik" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-full flex items-center gap-2 transition-all shadow-md shadow-emerald-600/20">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> pesan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="umkm-card makanan bg-white rounded-3xl border border-slate-200/70 p-5 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+                    <div>
+                        <div class="h-52 rounded-2xl overflow-hidden mb-4 relative bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80" alt="Keripik Singkong" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Keripik+Singkong'">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Kuliner</span>
+                        </div>
+                        <span class="text-[11px] font-semibold text-primary-600 uppercase tracking-wider">Pemilik: Ibu Suparni</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">Keripik Singkong Balado Renyah</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Olahan rasa singkong kebun sendiri dengan bumbu rempah cabai pedas manis alami khas resep keluarga.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">Harga</span>
+                            <span class="font-bold text-slate-900 text-base">Rp 15.000 <span class="text-xs text-slate-500 font-normal">/200g</span></span>
+                        </div>
+                        <a href="https://wa.me/6285929094840?text=Halo,%20saya%20tertarik%20membeli%20Keripik%20Singkong" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-full flex items-center gap-2 transition-all shadow-md shadow-emerald-600/20">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> pesan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="umkm-card pertanian bg-white rounded-3xl border border-slate-200/70 p-5 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+                    <div>
+                        <div class="h-52 rounded-2xl overflow-hidden mb-4 relative bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1587049352847-81a56d773cae?auto=format&fit=crop&w=600&q=80" alt="Madu Hutan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Madu+Murni'">
+                            <span class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Hasil Tani</span>
+                        </div>
+                        <span class="text-[11px] font-semibold text-primary-600 uppercase tracking-wider">Pemilik: Pak Handoko</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">Madu Hutan Multiflora Murni</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Madu alami dari lebah liar perbukitan Desa Delik, kaya manfaat untuk kesehatan dan stamina keluarga.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">Harga</span>
+                            <span class="font-bold text-slate-900 text-base">Rp 95.000 <span class="text-xs text-slate-500 font-normal">/350ml</span></span>
+                        </div>
+                        <a href="https://wa.me/6285929094840?text=Halo,%20saya%20tertarik%20membeli%20Madu%20Murni" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-full flex items-center gap-2 transition-all shadow-md shadow-emerald-600/20">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> pesan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="umkm-card kerajinan bg-white rounded-3xl border border-slate-200/70 p-5 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+                    <div>
+                        <div class="h-52 rounded-2xl overflow-hidden mb-4 relative bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=600&q=80" alt="Ukiran Kayu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Ukiran+Kayu'">
+                            <span class="absolute top-3 right-3 bg-teal-600 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-sm">Kerajinan</span>
+                        </div>
+                        <span class="text-[11px] font-semibold text-primary-600 uppercase tracking-wider">Pemilik: Sanggar Seni Kayu Delik</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1">Hiasan & Perabot Ukir Kayu Jati</h3>
+                        <p class="text-slate-600 text-xs mt-2 leading-relaxed">
+                            Produk furnitur serta dekorasi ruangan unik dari olahan kayu jati tua buatan pemuda daerah.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 block">Harga</span>
+                            <span class="font-bold text-slate-900 text-base">Negosiasi</span>
+                        </div>
+                        <a href="https://wa.me/6285929094840?text=Halo,%20saya%20tertarik%20pesan%20Kerajinan%20Kayu" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-full flex items-center gap-2 transition-all shadow-md shadow-emerald-600/20">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> pesan
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Empty Search Results Warning -->
+            <div id="no-results" class="hidden text-center py-20 bg-white rounded-3xl border border-dashed border-slate-300 mt-8">
+                <i class="fa-solid fa-store-slash text-4xl text-slate-300 mb-3 block"></i>
+                <h3 class="text-lg font-bold text-slate-700">Produk Tidak Ditemukan</h3>
+                <p class="text-xs text-slate-500 mt-1">Coba gunakan kata kunci pencarian lain atau pilih kategori Semua Produk.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER & KONTAK -->
+    <footer id="kontak" class="bg-slate-900 text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand -->
+                <div class="space-y-4 lg:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center p-1 border border-white/20">
+                            <img src="Logo Humas.png" alt="Logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/16a34a/ffffff?text=Delik'">
+                        </div>
+                        <span class="text-lg font-bold tracking-tight">Desa Delik</span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Portal resmi Desa Delik sebagai wadah publikasi potensi sumber daya alam, pembangunan ekonomi warga, serta transparansi publik.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200 mb-4">Navigasi Halaman</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Beranda Utama</a></li>
+                        <li><a href="Header-Profil.html" class="hover:text-white transition-colors">Profil Desa</a></li>
+                        <li><a href="index.html#pemerintahan" class="hover:text-white transition-colors">Struktur Pemerintahan</a></li>
+                        <li><a href="Header-Potensi.html" class="hover:text-white transition-colors">Potensi Desa</a></li>
+                        <li><a href="Header-UMKM.html" class="hover:text-white transition-colors">UMKM Warga</a></li>
+                        <li><a href="Header-Berita.html" class="hover:text-white transition-colors">Berita</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200 mb-4">Sekretariat Desa</h4>
+                    <ul class="space-y-3 text-xs text-slate-400">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot mt-0.5 text-primary-400"></i>
+                            <span>Kantor Balai Desa Delik, Kec. Tuntang, Kabupaten Semarang, Jawa Tengah</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-primary-400"></i>
+                            <span>pemdes@desadelik.id</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-primary-400"></i>
+                            <span>+62 859-2909-4840</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Social Media -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200 mb-4">Media Sosial</h4>
+                    <div class="flex gap-3">
+                        <a href="https://wa.me/6285929094840" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors text-slate-300 hover:text-white">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/hmmalundip" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors text-slate-300 hover:text-white">   
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@hmmanajemendanadministrasi9490" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors text-slate-300 hover:text-white">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Pemerintah Desa Delik. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.className = 'fa-solid fa-bars text-xl';
+                } else {
+                    menuIcon.className = 'fa-solid fa-xmark text-xl';
+                }
+            });
+        }
+
+        // Category Filter Logic
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.umkm-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            const noResults = document.getElementById('no-results');
+            let visibleCount = 0;
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary-600', 'text-white', 'shadow-md', 'shadow-primary-600/20', 'active');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.remove('bg-white', 'text-slate-600');
+                event.currentTarget.classList.add('bg-primary-600', 'text-white', 'shadow-md', 'shadow-primary-600/20', 'active');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+
+        // Search Keyword Filter Logic
+        function performSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.umkm-card');
+            const noResults = document.getElementById('no-results');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+
+        // Live Search Handler on Typing
+        document.getElementById('search-input')?.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            } else {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

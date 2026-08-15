@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desa Delik</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Desa -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold text-xl  group-hover:scale-105 transition-transform">
+                        <img src="Logo Humas.png">
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-slate-900 tracking-tight block leading-none">Desa Delik</span>
+                        <span class="text-xs text-slate-500 font-medium">Kabupaten Semarang</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-1 bg-slate-100/60 p-1.5 rounded-full border border-slate-200/50">
+                    <a href="index.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Beranda</a>
+                    <a href="Header-Profil.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Profil</a>
+                    <a href="#pemerintahan" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Pemerintahan</a>
+                    <a href="Header-Potensi.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Potensi</a>
+                    <a href="Header-UMKM.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">UMKM</a>
+                    <a href="Header-Berita.html" class="px-5 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900 rounded-full hover:bg-white transition-all">Berita</a>
+                </nav>
+
+                <!-- CTA Button Desktop -->
+                <div class="hidden md:flex items-center">
+                    <a href="#kontak" class="bg-slate-900 hover:bg-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow-primary-600/20">
+                        Kontak Kami
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-colors" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-2">
+            <a href="index.html" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600 transition-colors">Beranda</a>
+            <a href="Header-Profil.html" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600 transition-colors">Profil</a>
+            <a href="index.html" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600 transition-colors">Pemerintahan</a>
+            <a href="Header-Potensi.html" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600 transition-colors">Potensi</a>
+            <a href="Header-UMKM.html" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600 transition-colors">UMKM</a>
+            <a href="Header-Berita.html" class="mobile-link block px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50 hover:text-primary-600 transition-colors">Berita</a>
+            <a href="#kontak" class="mobile-link block text-center mt-4 bg-primary-600 text-white font-semibold py-3 rounded-xl shadow-md">Kontak Kami</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
+                        Portal Resmi Desa
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                        Selamat Datang di <br><span class="bg-gradient-to-r from-primary-600 to-teal-500 bg-clip-text text-transparent">Desa Delik</span>
+                    </h1>
+                    
+                    <p class="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Pusat informasi publik, layanan pemerintahan, potensi ekonomi lokal, serta sarana promosi produk unggulan warga Desa Delik.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#profil" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg shadow-primary-600/25 transition-all transform hover:-translate-y-0.5">
+                            Eksplorasi Desa <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#umkm" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold px-8 py-4 rounded-full transition-all">
+                            <i class="fa-solid fa-store text-primary-600"></i> Produk UMKM
+                        </a>
+                    </div>
+
+                    <!-- Quick Metrics Counter -->
+                    <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4">
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-slate-900">3,420+</span>
+                            <span class="text-xs sm:text-sm text-slate-500 font-medium">Jiwa Penduduk</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-slate-900">12.5 <span class="text-sm font-semibold">km²</span></span>
+                            <span class="text-xs sm:text-sm text-slate-500 font-medium">Luas Wilayah</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-extrabold text-slate-900">45+</span>
+                            <span class="text-xs sm:text-sm text-slate-500 font-medium">UMKM Aktif</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Image Banner -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative background glow -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-teal-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000"></div>
+                        
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1530878902700-5ad4f9e4c318?q=80&w=1334&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                                 alt="Pemandangan Desa Delik" 
+                                 class="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://placehold.co/800x600/16a34a/ffffff?text=Suasana+Desa'">
+                            
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent p-6 text-white">
+                                <span class="text-xs uppercase tracking-wider font-bold text-primary-400">Keindahan Alam</span>
+                                <p class="text-sm font-medium mt-1">Lansekap perbukitan hijau dan hamparan sawah Desa Delik.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: PROFIL DESA -->
+    <section id="profil" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest font-bold text-primary-600 bg-primary-50 px-3 py-1 rounded-full">Tentang Kami</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">Profil Singkat Desa</h2>
+                <p class="text-slate-600 mt-2">Mengenal sejarah, visi-misi, serta kondisi geografis Desa Delik.</p>
+            </div>
+
+            <!-- Grid Sejarah & Visi Misi -->
+            <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+                <!-- Sejarah Card -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 space-y-4">
+                    <div class="w-12 h-12 bg-primary-100 rounded-2xl flex items-center justify-center text-primary-700 text-xl font-bold">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">Sejarah Desa</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Desa Delik didirikan pada tahun 1952 oleh para tetua adat setempat. Berawal dari permukiman agraris kecil, kini berkembang menjadi salah satu desa percontohan berbasis teknologi informasi dan tata kelola pertanian berkelanjutan di wilayah Kabupaten Asri Nusantara.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Nama "Delik" mengandungkan doa dan tekad agar seluruh warganya senantiasa menyukai kemajuan, kedamaian, dan keberlanjutan hidup bersama.
+                    </p>
+                    <br>
+                    <a href="Header-Profil.html" class="a-baca-selengkapnya"> Baca Selengkapnya&ensp;
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+                <!-- Visi & Misi Card -->
+                <div class="bg-primary-900 text-white p-8 rounded-3xl space-y-6 shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-10 text-white text-9xl">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <div class="relative z-10">
+                        <span class="text-xs font-bold uppercase text-primary-400 tracking-wider">Arah Pembangunan</span>
+                        <h3 class="text-2xl font-bold mt-1">Visi Desa Sukamaju</h3>
+                        <blockquote class="italic text-primary-100 border-l-2 border-primary-500 pl-4 py-1 my-3 text-lg">
+                            "Mewujudkan Desa Delik yang Sejahtera, Mandiri Secara Ekonomi, serta Melestarikan Kearifan Lokal pada Tahun 2029."
+                        </blockquote>
+
+                        <h4 class="text-lg font-bold text-white mt-6 mb-3">Misi Utama:</h4>
+                        <ul class="space-y-3 text-sm text-primary-100">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary-400 mt-1"></i>
+                                <span>Meningkatkan kualitas pelayanan publik melalui digitalisasi tata kelola desa.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary-400 mt-1"></i>
+                                <span>Mendorong perekonomian warga melalui pemberdayaan UMKM dan Pertanian Modern.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary-400 mt-1"></i>
+                                <span>Memelihara infrastruktur jalan, sanitasi, dan kelestarian lingkungan hidup.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: PEMERINTAHAN DESA -->
+    <section id="pemerintahan" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest font-bold text-primary-600 bg-primary-50 px-3 py-1 rounded-full">Aparatur Desa</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">Struktur Pemerintahan</h2>
+                <p class="text-slate-600 mt-2">Perangkat desa yang siap memberikan pelayanan terbaik untuk seluruh masyarakat.</p>
+            </div>
+
+            <!-- Grid Pejabat Desa -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Kades -->
+                <div class="bg-white rounded-3xl p-6 text-center border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" 
+                             alt="Bapak H. Ahmad Subagja" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e2e8f0/475569?text=Kepala+Desa'">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">H. Ahmad Subagja, S.Sos</h3>
+                    <p class="text-xs font-semibold text-primary-600 uppercase mt-1">Kepala Desa</p>
+                    <p class="text-xs text-slate-500 mt-3 border-t border-slate-100 pt-3">Masa Jabatan: 2021 - 2027</p>
+                </div>
+
+                <!-- Sekdes -->
+                <div class="bg-white rounded-3xl p-6 text-center border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" 
+                             alt="Ibu Siti Rahmawati" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e2e8f0/475569?text=Sekretaris'">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Siti Rahmawati, S.E</h3>
+                    <p class="text-xs font-semibold text-primary-600 uppercase mt-1">Sekretaris Desa</p>
+                    <p class="text-xs text-slate-500 mt-3 border-t border-slate-100 pt-3">Penanggung Jawab Administrasi</p>
+                </div>
+
+                <!-- Kaur Keuangan -->
+                <div class="bg-white rounded-3xl p-6 text-center border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" 
+                             alt="Bapak Budi Santoso" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e2e8f0/475569?text=Kaur+Keuangan'">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Budi Santoso, A.Md</h3>
+                    <p class="text-xs font-semibold text-primary-600 uppercase mt-1">Kaur Keuangan</p>
+                    <p class="text-xs text-slate-500 mt-3 border-t border-slate-100 pt-3">Pengelola Anggaran Desa</p>
+                </div>
+
+                <!-- Kasi Pelayanan -->
+                <div class="bg-white rounded-3xl p-6 text-center border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div class="relative w-32 h-32 mx-auto mb-4 rounded-2xl overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" 
+                             alt="Ibu Rina Melati" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x400/e2e8f0/475569?text=Kasi+Pelayanan'">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Rina Melati, S.IP</h3>
+                    <p class="text-xs font-semibold text-primary-600 uppercase mt-1">Kasi Pelayanan</p>
+                    <p class="text-xs text-slate-500 mt-3 border-t border-slate-100 pt-3">Pelayanan Surat & Sosial</p>
+                </div>
+
+            </div>
+
+            <!-- Jam Pelayanan Banner -->
+            <div class="mt-12 bg-white rounded-2xl p-6 border border-slate-200/80 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Jam Layanan Kantor Desa</h4>
+                        <p class="text-xs text-slate-500">Senin - Jumat: 08.00 - 15.00 WIB (Sabtu & Minggu Libur)</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/6285929094840" target="_blank" class="bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-5 py-2.5 rounded-full font-semibold text-xs transition-colors flex items-center gap-2 shrink-0">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Layanan Surat via WA
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: POTENSI DESA -->
+    <section id="potensi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest font-bold text-primary-600 bg-primary-50 px-3 py-1 rounded-full">Kekayaan Lokal</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">Potensi Utama Desa</h2>
+                <p class="text-slate-600 mt-2">Sektor unggulan yang menopang pertumbuhan ekonomi dan kesejahteraan warga.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Potensi 1: Pertanian -->
+                <div class="group rounded-3xl bg-slate-50 border border-slate-100 overflow-hidden hover:border-primary-200 hover:shadow-lg transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80" 
+                             alt="Pertanian Organik" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/22c55e/ffffff?text=Pertanian'">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-slate-800 text-xs font-bold px-3 py-1 rounded-full">Sektor Agraris</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">Pertanian & Padi Padi Organik</h3>
+                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                            Lahan sawah seluas 350 hektar dengan sistem irigasi teknis modern. Menghasilkan padi beras merah & hijau organik berkualitas tinggi tanpa pestisida kimia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Potensi 2: Wisata Alam -->
+                <div class="group rounded-3xl bg-slate-50 border border-slate-100 overflow-hidden hover:border-primary-200 hover:shadow-lg transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" 
+                             alt="Wisata Wisata Alam Curug" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/0ea5e9/ffffff?text=Ekowisata'">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-slate-800 text-xs font-bold px-3 py-1 rounded-full">Pariwisata</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">Ekowisata Air Terjun Curug Asri</h3>
+                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                            Destinasi wisata alam dengan pemandangan air terang alami, camping ground keluarga, serta trek bersepeda gunung yang dikelola langsung BUMDes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Potensi 3: Kerajinan Bambu -->
+                <div class="group rounded-3xl bg-slate-50 border border-slate-100 overflow-hidden hover:border-primary-200 hover:shadow-lg transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" 
+                             alt="Kerajinan Tangan Bambu" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/f59e0b/ffffff?text=Kerajinan'">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-slate-800 text-xs font-bold px-3 py-1 rounded-full">Kerajinan Kreatif</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 group-hover:text-primary-600 transition-colors">Anyaman Bambu Tradisional</h3>
+                        <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                            Sentra pengrajin perabot dan dekorasi bambu bernilai seni tinggi yang telah berhasil ditembus hingga pasar ekspor Asia Tenggara.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SECTION 5: LAPAK UMKM DESA -->
+    <section id="umkm" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs uppercase tracking-widest font-bold text-primary-600 bg-primary-50 px-3 py-1 rounded-full">Ekonomi Lokal</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">Lapak Produksi Warga (UMKM)</h2>
+                    <p class="text-slate-600 mt-2">Bantu perekonomian desa dengan membeli produk asli lokal Delik.</p>
+                </div>
+
+                <!-- Lihat Semua UMKM -->
+                <div class="flex flex-wrap gap-2">
+                    <a href="Header-UMKM.html" class="umkm-btn bg-slate-100 text-slate-600 hover:bg-slate-200 text-sm font-semibold px-4 py-2 rounded-full transition-all">Lihat Semua UMKM</a>
+                </div>
+            </div>
+
+            <!-- UMKM Grid Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- UMKM Item 1 -->
+                <div class="umkm-card makanan bg-slate-50 rounded-3xl border border-slate-100 p-5 flex flex-col justify-between hover:shadow-xl transition-all">
+                    <div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 relative">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Kopi Robusta Desa" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Kopi'">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full">Kuliner</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Kopi Robusta Lereng Delik</h3>
+                        <p class="text-xs text-slate-500 mt-1">Pemilik: Kelompok Tani Mandiri</p>
+                        <p class="text-slate-600 text-xs mt-3 leading-relaxed">Kopi bubuk murni kualitas premium dipetik langsung dari kebun kopi dataran tinggi desa.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-400 block">Harga</span>
+                            <span class="font-bold text-slate-900 text-base">Rp 35.000 /250g</span>
+                        </div>
+                        <a href="https://wa.me/6285929094840?text=Halo,%20saya%20ingin%20pesan%20Kopi%20Robusta" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full flex items-center gap-1.5 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Beli
+                        </a>
+                    </div>
+                </div>
+
+                <!-- UMKM Item 2 -->
+                <div class="umkm-card kerajinan bg-slate-50 rounded-3xl border border-slate-100 p-5 flex flex-col justify-between hover:shadow-xl transition-all">
+                    <div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 relative">
+                            <img src="https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=600&q=80" alt="Tas Anyaman Bambu" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Kerajinan'">
+                            <span class="absolute top-3 right-3 bg-teal-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full">Kerajinan</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Tas & Anjat Anyaman Bambu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Pemilik: Ibu Karyawati</p>
+                        <p class="text-slate-600 text-xs mt-3 leading-relaxed">Tas etnik ramah lingkungan buatan tangan dengan finishing halus dan tahan lama.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-400 block">Harga</span>
+                            <span class="font-bold text-slate-900 text-base">Rp 85.000</span>
+                        </div>
+                        <a href="https://wa.me/6285929094840?text=Halo,%20saya%20ingin%20pesan%20Tas%20Anyaman" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full flex items-center gap-1.5 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Beli
+                        </a>
+                    </div>
+                </div>
+
+                <!-- UMKM Item 3 -->
+                <div class="umkm-card pertanian bg-slate-50 rounded-3xl border border-slate-100 p-5 flex flex-col justify-between hover:shadow-xl transition-all">
+                    <div>
+                        <div class="h-48 rounded-2xl overflow-hidden mb-4 relative">
+                            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="Beras Organik" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x400/334155/ffffff?text=Beras'">
+                            <span class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full">Hasil Tani</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Beras Pandan Wangi Organik</h3>
+                        <p class="text-xs text-slate-500 mt-1">Pemilik: Poktan Sri Murni</p>
+                        <p class="text-slate-600 text-xs mt-3 leading-relaxed">Beras putih berkadar gula rendah, bebas pemutih dan pengawet buatan.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-slate-400 block">Harga</span>
+                            <span class="font-bold text-slate-900 text-base">Rp 70.000 /5kg</span>
+                        </div>
+                        <a href="https://wa.me/6285929094840?text=Halo,%20saya%20ingin%20pesan%20Beras%20Organik" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2.5 rounded-full flex items-center gap-1.5 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Beli
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+            <!-- SECTION 4: GALERI DESA -->
+    <section id="galeri" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-widest font-bold text-primary-600 bg-primary-50 px-3 py-1 rounded-full">Dokumentasi</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">Galeri Kegiatan & Keindahan</h2>
+                <p class="text-slate-600 mt-2">Momen kebersamaan, kebudayaan, serta lanskap indah Desa Delik.</p>
+            </div>
+
+            <!-- Grid Photo Gallery -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                
+                <!-- Photo 1 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer bg-slate-200" onclick="openLightbox('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80', 'Gotong Royong Bersama Warga')">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Gotong Royong" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x600/cbd5e1/334155?text=Foto+1'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-xs text-white font-medium">Gotong Royong Bersama Warga</span>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer bg-slate-200" onclick="openLightbox('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80', 'Festival Budaya Panen Raya')">
+                    <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Festival Budaya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x600/cbd5e1/334155?text=Foto+2'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-xs text-white font-medium">Festival Budaya Panen Raya</span>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer bg-slate-200" onclick="openLightbox('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=1200&q=80', 'Pelatihan Petani Muda')">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=600&q=80" alt="Pelatihan Petani" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x600/cbd5e1/334155?text=Foto+3'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-xs text-white font-medium">Pelatihan Teknologi Petani Muda</span>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer bg-slate-200" onclick="openLightbox('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'Lansekap Danau Desa')">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Lansekap Danau Desa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x600/cbd5e1/334155?text=Foto+4'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-xs text-white font-medium">Lansekap Danau Alami Desa</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+            <br>
+            <!-- Peta & Wilayah -->
+            <div class="bg-slate-900 rounded-3xl p-8 text-white">
+                <div class="grid md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-1 space-y-3">
+                        <span class="text-xs uppercase font-bold text-primary-400 tracking-wider">Peta Administrasi</span>
+                        <h3 class="text-2xl font-bold">Batas Wilayah Desa</h3>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex justify-between border-b border-slate-800 pb-2">
+                                <span>Utara:</span> <strong class="text-white">Desa Harapan Jaya</strong>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-800 pb-2">
+                                <span>Selatan:</span> <strong class="text-white">Kecamatan Makmur</strong>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-800 pb-2">
+                                <span>Timur:</span> <strong class="text-white">Sungai Citarum Asri</strong>
+                            </li>
+                            <li class="flex justify-between pb-1">
+                                <span>Barat:</span> <strong class="text-white">Hutan Lindung Pinus</strong>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="md:col-span-2 h-64 rounded-2xl overflow-hidden bg-slate-800 relative">
+                        <!-- Placeholder Map Embed -->
+                        <iframe 
+                            class="w-full h-full border-0 grayscale contrast0 opacity-80 hover:opacity-100 transition-opacity"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.868268226568!2d110.42583287489789!3d-7.024766768818409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708c7838414717%3A0xb341685ded7867d8!2sJangli%20Tlawah%20III%20A%2C%20Kec.%20Candisari%2C%20Kota%20Semarang%2C%20Jawa%20Tengah%2050254!5e0!3m2!1sen!2sid!4v1786729645832!5m2!1sen!2sid="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & KONTAK -->
+    <footer id="kontak" class="bg-slate-900 text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Col 1: Brand -->
+                <div class="space-y-4 lg:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center p-1 border border-white/20">
+                            <img src="Logo Humas.png" alt="Logo" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100x100/16a34a/ffffff?text=Delik'">
+                        </div>
+                        <span class="text-lg font-bold tracking-tight">Desa Delik</span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Portal resmi Desa Delik sebagai wadah publikasi potensi sumber daya alam, pembangunan ekonomi warga, serta transparansi publik.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200 mb-4">Navigasi Halaman</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Beranda Utama</a></li>
+                        <li><a href="Header-Profil.html" class="hover:text-white transition-colors">Profil Desa</a></li>
+                        <li><a href="index.html#pemerintahan" class="hover:text-white transition-colors">Struktur Pemerintahan</a></li>
+                        <li><a href="Header-Potensi.html" class="hover:text-white transition-colors">Potensi Desa</a></li>
+                        <li><a href="Header-UMKM.html" class="hover:text-white transition-colors">UMKM Warga</a></li>
+                        <li><a href="Header-Berita.html" class="hover:text-white transition-colors">Berita</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200 mb-4">Sekretariat Desa</h4>
+                    <ul class="space-y-3 text-xs text-slate-400">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot mt-0.5 text-primary-400"></i>
+                            <span>Kantor Balai Desa Delik, Kec. Tuntang, Kabupaten Semarang, Jawa Tengah</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-primary-400"></i>
+                            <span>pemdes@desadelik.id</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-primary-400"></i>
+                            <span>+62 859-2909-4840</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Social Media -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-200 mb-4">Media Sosial</h4>
+                    <div class="flex gap-3">
+                        <a href="https://wa.me/6285929094840" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors text-slate-300 hover:text-white">
+                            <i class="fa-brands fa-whatsapp text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/hmmalundip" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors text-slate-300 hover:text-white">   
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@hmmanajemendanadministrasi9490" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors text-slate-300 hover:text-white">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Pemerintah Desa Delik. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL FOR GALLERY -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-slate-900/90 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full text-center">
+            <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white text-3xl font-bold hover:text-slate-300">&times;</button>
+            <img id="lightbox-img" src="" alt="Gallery Preview" class="max-h-[80vh] max-w-full mx-auto rounded-2xl shadow-2xl object-contain">
+            <p id="lightbox-caption" class="text-white text-sm font-medium mt-4"></p>
+        </div>
+    </div>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+
+        // Close mobile navbar on menu item click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            });
+        });
+
+        // 2. Lightbox Modal Gallery Functionality
+        function openLightbox(imageSrc, captionText) {
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+
+            img.src = imageSrc;
+            caption.innerText = captionText;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // 3. UMKM Category Filter
+        function filterUmkm(category) {
+            const cards = document.querySelectorAll('.umkm-card');
+            const buttons = document.querySelectorAll('.umkm-btn');
+
+            // Toggle active button style
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary-600', 'text-white', 'active');
+                btn.classList.add('bg-slate-100', 'text-slate-600');
+            });
+
+            event.target.classList.remove('bg-slate-100', 'text-slate-600');
+            event.target.classList.add('bg-primary-600', 'text-white', 'active');
+
+            // Show/Hide Cards
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
